@@ -84,6 +84,10 @@ namespace ServiceReference1
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<ServiceReference1.GetReplenishmentOrderResponse> GetReplenishmentOrderAsync(ServiceReference1.GetReplenishmentOrderRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetCMKPromotion", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<ServiceReference1.GetCMKPromotionResponse> GetCMKPromotionAsync(ServiceReference1.GetCMKPromotionRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CloseSaleOrder", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<ServiceReference1.CloseSaleOrderResponse> CloseSaleOrderAsync(ServiceReference1.CloseSaleOrderRequest request);
@@ -95,6 +99,14 @@ namespace ServiceReference1
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AuditSaleOrder", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<ServiceReference1.AuditSaleOrderResponse> AuditSaleOrderAsync(ServiceReference1.AuditSaleOrderRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateSaleOutStock", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateSaleOutStockResponse> CreateSaleOutStockAsync(ServiceReference1.CreateSaleOutStockRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateSaleReturnStock", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateSaleReturnStockResponse> CreateSaleReturnStockAsync(ServiceReference1.CreateSaleReturnStockRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateWarehouseTransfer", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -119,6 +131,34 @@ namespace ServiceReference1
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CancelTransferIn", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<ServiceReference1.CancelTransferInResponse> CancelTransferInAsync(ServiceReference1.CancelTransferInRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateARReceiveBill", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateARReceiveBillResponse> CreateARReceiveBillAsync(ServiceReference1.CreateARReceiveBillRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateARRefundBill", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateARRefundBillResponse> CreateARRefundBillAsync(ServiceReference1.CreateARRefundBillRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateOtherStockReceive", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateOtherStockReceiveResponse> CreateOtherStockReceiveAsync(ServiceReference1.CreateOtherStockReceiveRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateCustomer", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateCustomerResponse> CreateCustomerAsync(ServiceReference1.CreateCustomerRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateGiftTicket", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateGiftTicketResponse> CreateGiftTicketAsync(ServiceReference1.CreateGiftTicketRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateTicketsPublish", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateTicketsPublishResponse> CreateTicketsPublishAsync(ServiceReference1.CreateTicketsPublishRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegisterVIPMember", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<ServiceReference1.RegisterVIPMemberResponse> RegisterVIPMemberAsync(ServiceReference1.RegisterVIPMemberRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRptVMIPO", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -900,6 +940,50 @@ namespace ServiceReference1
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCMKPromotion", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GetCMKPromotionRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public ServiceReference1.MySoapHeader MySoapHeader;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string FilterJson;
+        
+        public GetCMKPromotionRequest()
+        {
+        }
+        
+        public GetCMKPromotionRequest(ServiceReference1.MySoapHeader MySoapHeader, string FilterJson)
+        {
+            this.MySoapHeader = MySoapHeader;
+            this.FilterJson = FilterJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCMKPromotionResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class GetCMKPromotionResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string GetCMKPromotionResult;
+        
+        public GetCMKPromotionResponse()
+        {
+        }
+        
+        public GetCMKPromotionResponse(string GetCMKPromotionResult)
+        {
+            this.GetCMKPromotionResult = GetCMKPromotionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CloseSaleOrder", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
     public partial class CloseSaleOrderRequest
     {
@@ -1032,6 +1116,94 @@ namespace ServiceReference1
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateSaleOutStock", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateSaleOutStockRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public ServiceReference1.MySoapHeader MySoapHeader;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string BillJson;
+        
+        public CreateSaleOutStockRequest()
+        {
+        }
+        
+        public CreateSaleOutStockRequest(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            this.MySoapHeader = MySoapHeader;
+            this.BillJson = BillJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateSaleOutStockResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateSaleOutStockResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string CreateSaleOutStockResult;
+        
+        public CreateSaleOutStockResponse()
+        {
+        }
+        
+        public CreateSaleOutStockResponse(string CreateSaleOutStockResult)
+        {
+            this.CreateSaleOutStockResult = CreateSaleOutStockResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateSaleReturnStock", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateSaleReturnStockRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public ServiceReference1.MySoapHeader MySoapHeader;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string BillJson;
+        
+        public CreateSaleReturnStockRequest()
+        {
+        }
+        
+        public CreateSaleReturnStockRequest(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            this.MySoapHeader = MySoapHeader;
+            this.BillJson = BillJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateSaleReturnStockResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateSaleReturnStockResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string CreateSaleReturnStockResult;
+        
+        public CreateSaleReturnStockResponse()
+        {
+        }
+        
+        public CreateSaleReturnStockResponse(string CreateSaleReturnStockResult)
+        {
+            this.CreateSaleReturnStockResult = CreateSaleReturnStockResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CreateWarehouseTransfer", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
     public partial class CreateWarehouseTransferRequest
     {
@@ -1128,16 +1300,16 @@ namespace ServiceReference1
         public ServiceReference1.MySoapHeader MySoapHeader;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public string StoreDelivery_id;
+        public string BillJson;
         
         public CreateStoreTakeByDeliveryRequest()
         {
         }
         
-        public CreateStoreTakeByDeliveryRequest(ServiceReference1.MySoapHeader MySoapHeader, string StoreDelivery_id)
+        public CreateStoreTakeByDeliveryRequest(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
         {
             this.MySoapHeader = MySoapHeader;
-            this.StoreDelivery_id = StoreDelivery_id;
+            this.BillJson = BillJson;
         }
     }
     
@@ -1290,6 +1462,314 @@ namespace ServiceReference1
         public CancelTransferInResponse(string CancelTransferInResult)
         {
             this.CancelTransferInResult = CancelTransferInResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateARReceiveBill", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateARReceiveBillRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public ServiceReference1.MySoapHeader MySoapHeader;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string BillJson;
+        
+        public CreateARReceiveBillRequest()
+        {
+        }
+        
+        public CreateARReceiveBillRequest(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            this.MySoapHeader = MySoapHeader;
+            this.BillJson = BillJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateARReceiveBillResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateARReceiveBillResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string CreateARReceiveBillResult;
+        
+        public CreateARReceiveBillResponse()
+        {
+        }
+        
+        public CreateARReceiveBillResponse(string CreateARReceiveBillResult)
+        {
+            this.CreateARReceiveBillResult = CreateARReceiveBillResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateARRefundBill", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateARRefundBillRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public ServiceReference1.MySoapHeader MySoapHeader;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string BillJson;
+        
+        public CreateARRefundBillRequest()
+        {
+        }
+        
+        public CreateARRefundBillRequest(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            this.MySoapHeader = MySoapHeader;
+            this.BillJson = BillJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateARRefundBillResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateARRefundBillResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string CreateARRefundBillResult;
+        
+        public CreateARRefundBillResponse()
+        {
+        }
+        
+        public CreateARRefundBillResponse(string CreateARRefundBillResult)
+        {
+            this.CreateARRefundBillResult = CreateARRefundBillResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateOtherStockReceive", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateOtherStockReceiveRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public ServiceReference1.MySoapHeader MySoapHeader;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string BillJson;
+        
+        public CreateOtherStockReceiveRequest()
+        {
+        }
+        
+        public CreateOtherStockReceiveRequest(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            this.MySoapHeader = MySoapHeader;
+            this.BillJson = BillJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateOtherStockReceiveResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateOtherStockReceiveResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string CreateOtherStockReceiveResult;
+        
+        public CreateOtherStockReceiveResponse()
+        {
+        }
+        
+        public CreateOtherStockReceiveResponse(string CreateOtherStockReceiveResult)
+        {
+            this.CreateOtherStockReceiveResult = CreateOtherStockReceiveResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateCustomer", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateCustomerRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public ServiceReference1.MySoapHeader MySoapHeader;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string BillJson;
+        
+        public CreateCustomerRequest()
+        {
+        }
+        
+        public CreateCustomerRequest(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            this.MySoapHeader = MySoapHeader;
+            this.BillJson = BillJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateCustomerResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateCustomerResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string CreateCustomerResult;
+        
+        public CreateCustomerResponse()
+        {
+        }
+        
+        public CreateCustomerResponse(string CreateCustomerResult)
+        {
+            this.CreateCustomerResult = CreateCustomerResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateGiftTicket", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateGiftTicketRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public ServiceReference1.MySoapHeader MySoapHeader;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string BillJson;
+        
+        public CreateGiftTicketRequest()
+        {
+        }
+        
+        public CreateGiftTicketRequest(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            this.MySoapHeader = MySoapHeader;
+            this.BillJson = BillJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateGiftTicketResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateGiftTicketResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string CreateGiftTicketResult;
+        
+        public CreateGiftTicketResponse()
+        {
+        }
+        
+        public CreateGiftTicketResponse(string CreateGiftTicketResult)
+        {
+            this.CreateGiftTicketResult = CreateGiftTicketResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateTicketsPublish", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateTicketsPublishRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public ServiceReference1.MySoapHeader MySoapHeader;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string BillJson;
+        
+        public CreateTicketsPublishRequest()
+        {
+        }
+        
+        public CreateTicketsPublishRequest(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            this.MySoapHeader = MySoapHeader;
+            this.BillJson = BillJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateTicketsPublishResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CreateTicketsPublishResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string CreateTicketsPublishResult;
+        
+        public CreateTicketsPublishResponse()
+        {
+        }
+        
+        public CreateTicketsPublishResponse(string CreateTicketsPublishResult)
+        {
+            this.CreateTicketsPublishResult = CreateTicketsPublishResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RegisterVIPMember", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class RegisterVIPMemberRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public ServiceReference1.MySoapHeader MySoapHeader;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string BillJson;
+        
+        public RegisterVIPMemberRequest()
+        {
+        }
+        
+        public RegisterVIPMemberRequest(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            this.MySoapHeader = MySoapHeader;
+            this.BillJson = BillJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RegisterVIPMemberResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class RegisterVIPMemberResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string RegisterVIPMemberResult;
+        
+        public RegisterVIPMemberResponse()
+        {
+        }
+        
+        public RegisterVIPMemberResponse(string RegisterVIPMemberResult)
+        {
+            this.RegisterVIPMemberResult = RegisterVIPMemberResult;
         }
     }
     
@@ -1615,6 +2095,20 @@ namespace ServiceReference1
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference1.GetCMKPromotionResponse> ServiceReference1.WS_AndroidSoap.GetCMKPromotionAsync(ServiceReference1.GetCMKPromotionRequest request)
+        {
+            return base.Channel.GetCMKPromotionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.GetCMKPromotionResponse> GetCMKPromotionAsync(ServiceReference1.MySoapHeader MySoapHeader, string FilterJson)
+        {
+            ServiceReference1.GetCMKPromotionRequest inValue = new ServiceReference1.GetCMKPromotionRequest();
+            inValue.MySoapHeader = MySoapHeader;
+            inValue.FilterJson = FilterJson;
+            return ((ServiceReference1.WS_AndroidSoap)(this)).GetCMKPromotionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<ServiceReference1.CloseSaleOrderResponse> ServiceReference1.WS_AndroidSoap.CloseSaleOrderAsync(ServiceReference1.CloseSaleOrderRequest request)
         {
             return base.Channel.CloseSaleOrderAsync(request);
@@ -1657,6 +2151,34 @@ namespace ServiceReference1
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateSaleOutStockResponse> ServiceReference1.WS_AndroidSoap.CreateSaleOutStockAsync(ServiceReference1.CreateSaleOutStockRequest request)
+        {
+            return base.Channel.CreateSaleOutStockAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CreateSaleOutStockResponse> CreateSaleOutStockAsync(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            ServiceReference1.CreateSaleOutStockRequest inValue = new ServiceReference1.CreateSaleOutStockRequest();
+            inValue.MySoapHeader = MySoapHeader;
+            inValue.BillJson = BillJson;
+            return ((ServiceReference1.WS_AndroidSoap)(this)).CreateSaleOutStockAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateSaleReturnStockResponse> ServiceReference1.WS_AndroidSoap.CreateSaleReturnStockAsync(ServiceReference1.CreateSaleReturnStockRequest request)
+        {
+            return base.Channel.CreateSaleReturnStockAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CreateSaleReturnStockResponse> CreateSaleReturnStockAsync(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            ServiceReference1.CreateSaleReturnStockRequest inValue = new ServiceReference1.CreateSaleReturnStockRequest();
+            inValue.MySoapHeader = MySoapHeader;
+            inValue.BillJson = BillJson;
+            return ((ServiceReference1.WS_AndroidSoap)(this)).CreateSaleReturnStockAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<ServiceReference1.CreateWarehouseTransferResponse> ServiceReference1.WS_AndroidSoap.CreateWarehouseTransferAsync(ServiceReference1.CreateWarehouseTransferRequest request)
         {
             return base.Channel.CreateWarehouseTransferAsync(request);
@@ -1690,11 +2212,11 @@ namespace ServiceReference1
             return base.Channel.CreateStoreTakeByDeliveryAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.CreateStoreTakeByDeliveryResponse> CreateStoreTakeByDeliveryAsync(ServiceReference1.MySoapHeader MySoapHeader, string StoreDelivery_id)
+        public System.Threading.Tasks.Task<ServiceReference1.CreateStoreTakeByDeliveryResponse> CreateStoreTakeByDeliveryAsync(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
         {
             ServiceReference1.CreateStoreTakeByDeliveryRequest inValue = new ServiceReference1.CreateStoreTakeByDeliveryRequest();
             inValue.MySoapHeader = MySoapHeader;
-            inValue.StoreDelivery_id = StoreDelivery_id;
+            inValue.BillJson = BillJson;
             return ((ServiceReference1.WS_AndroidSoap)(this)).CreateStoreTakeByDeliveryAsync(inValue);
         }
         
@@ -1738,6 +2260,104 @@ namespace ServiceReference1
             inValue.MySoapHeader = MySoapHeader;
             inValue.id = id;
             return ((ServiceReference1.WS_AndroidSoap)(this)).CancelTransferInAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateARReceiveBillResponse> ServiceReference1.WS_AndroidSoap.CreateARReceiveBillAsync(ServiceReference1.CreateARReceiveBillRequest request)
+        {
+            return base.Channel.CreateARReceiveBillAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CreateARReceiveBillResponse> CreateARReceiveBillAsync(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            ServiceReference1.CreateARReceiveBillRequest inValue = new ServiceReference1.CreateARReceiveBillRequest();
+            inValue.MySoapHeader = MySoapHeader;
+            inValue.BillJson = BillJson;
+            return ((ServiceReference1.WS_AndroidSoap)(this)).CreateARReceiveBillAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateARRefundBillResponse> ServiceReference1.WS_AndroidSoap.CreateARRefundBillAsync(ServiceReference1.CreateARRefundBillRequest request)
+        {
+            return base.Channel.CreateARRefundBillAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CreateARRefundBillResponse> CreateARRefundBillAsync(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            ServiceReference1.CreateARRefundBillRequest inValue = new ServiceReference1.CreateARRefundBillRequest();
+            inValue.MySoapHeader = MySoapHeader;
+            inValue.BillJson = BillJson;
+            return ((ServiceReference1.WS_AndroidSoap)(this)).CreateARRefundBillAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateOtherStockReceiveResponse> ServiceReference1.WS_AndroidSoap.CreateOtherStockReceiveAsync(ServiceReference1.CreateOtherStockReceiveRequest request)
+        {
+            return base.Channel.CreateOtherStockReceiveAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CreateOtherStockReceiveResponse> CreateOtherStockReceiveAsync(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            ServiceReference1.CreateOtherStockReceiveRequest inValue = new ServiceReference1.CreateOtherStockReceiveRequest();
+            inValue.MySoapHeader = MySoapHeader;
+            inValue.BillJson = BillJson;
+            return ((ServiceReference1.WS_AndroidSoap)(this)).CreateOtherStockReceiveAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateCustomerResponse> ServiceReference1.WS_AndroidSoap.CreateCustomerAsync(ServiceReference1.CreateCustomerRequest request)
+        {
+            return base.Channel.CreateCustomerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CreateCustomerResponse> CreateCustomerAsync(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            ServiceReference1.CreateCustomerRequest inValue = new ServiceReference1.CreateCustomerRequest();
+            inValue.MySoapHeader = MySoapHeader;
+            inValue.BillJson = BillJson;
+            return ((ServiceReference1.WS_AndroidSoap)(this)).CreateCustomerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateGiftTicketResponse> ServiceReference1.WS_AndroidSoap.CreateGiftTicketAsync(ServiceReference1.CreateGiftTicketRequest request)
+        {
+            return base.Channel.CreateGiftTicketAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CreateGiftTicketResponse> CreateGiftTicketAsync(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            ServiceReference1.CreateGiftTicketRequest inValue = new ServiceReference1.CreateGiftTicketRequest();
+            inValue.MySoapHeader = MySoapHeader;
+            inValue.BillJson = BillJson;
+            return ((ServiceReference1.WS_AndroidSoap)(this)).CreateGiftTicketAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference1.CreateTicketsPublishResponse> ServiceReference1.WS_AndroidSoap.CreateTicketsPublishAsync(ServiceReference1.CreateTicketsPublishRequest request)
+        {
+            return base.Channel.CreateTicketsPublishAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CreateTicketsPublishResponse> CreateTicketsPublishAsync(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            ServiceReference1.CreateTicketsPublishRequest inValue = new ServiceReference1.CreateTicketsPublishRequest();
+            inValue.MySoapHeader = MySoapHeader;
+            inValue.BillJson = BillJson;
+            return ((ServiceReference1.WS_AndroidSoap)(this)).CreateTicketsPublishAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference1.RegisterVIPMemberResponse> ServiceReference1.WS_AndroidSoap.RegisterVIPMemberAsync(ServiceReference1.RegisterVIPMemberRequest request)
+        {
+            return base.Channel.RegisterVIPMemberAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.RegisterVIPMemberResponse> RegisterVIPMemberAsync(ServiceReference1.MySoapHeader MySoapHeader, string BillJson)
+        {
+            ServiceReference1.RegisterVIPMemberRequest inValue = new ServiceReference1.RegisterVIPMemberRequest();
+            inValue.MySoapHeader = MySoapHeader;
+            inValue.BillJson = BillJson;
+            return ((ServiceReference1.WS_AndroidSoap)(this)).RegisterVIPMemberAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1790,11 +2410,11 @@ namespace ServiceReference1
         {
             if ((endpointConfiguration == EndpointConfiguration.WS_AndroidSoap))
             {
-                return new System.ServiceModel.EndpointAddress("http://116.205.174.138:9001/WS_Android.asmx");
+                return new System.ServiceModel.EndpointAddress("http://47.251.72.133:9001/WS_Android.asmx");
             }
             if ((endpointConfiguration == EndpointConfiguration.WS_AndroidSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("http://116.205.174.138:9001/WS_Android.asmx");
+                return new System.ServiceModel.EndpointAddress("http://47.251.72.133:9001/WS_Android.asmx");
             }
             throw new System.InvalidOperationException(string.Format("No se pudo encontrar un punto de conexión con el nombre \"{0}\".", endpointConfiguration));
         }

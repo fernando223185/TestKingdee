@@ -17,12 +17,14 @@ namespace TestKingdee.Data
         }
 
         public async Task<bool> InsertOrUpdateProduct(
-            int id, string code, string name, int categoryId, int brandId, string barcode, string spec, string unit,
+            int id, string code, string name, string categoryId, int brandId, string barcode, string spec, string unit,
             decimal retailPrice, decimal wholesalePrice, decimal marketPrice, decimal vipPrice, decimal price4, decimal price5,
             decimal price6, decimal price7, decimal taxRate, string aliasName, string attribute, string phoneticCode, string memo,
             string netContent, string originPlace, decimal weight, decimal volume, int disabled, int purchasingCycle, int qualityPeriod,
-            string externalId, decimal price8)
+            string externalId, decimal price8, string branch_code, int branch_id, string branch_name)
         {
+            Console.WriteLine($"Retail Price: {retailPrice}, Wholesale Price: {wholesalePrice}");
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("sp_starnet_products_api", conn))
@@ -60,6 +62,10 @@ namespace TestKingdee.Data
                     cmd.Parameters.AddWithValue("@quality_period", qualityPeriod);
                     cmd.Parameters.AddWithValue("@external_id", externalId);
                     cmd.Parameters.AddWithValue("@price8", price8);
+                    cmd.Parameters.AddWithValue("@branch_code", branch_code);
+                    cmd.Parameters.AddWithValue("@branch_id", branch_id);
+                    cmd.Parameters.AddWithValue("@branch_name", branch_name);
+
 
                     try
                     {
