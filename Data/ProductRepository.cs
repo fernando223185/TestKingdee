@@ -18,7 +18,7 @@ namespace TestKingdee.Data
 
         public async Task<bool> InsertOrUpdateProduct(
             int id, string code, string name, string categoryId, int brandId, string barcode, string spec, string unit,
-            decimal retailPrice, decimal wholesalePrice, decimal marketPrice, decimal vipPrice, decimal price4, decimal price5,
+            decimal retailPrice, decimal wholesalePrice, decimal p6a_CAJA, decimal marketPrice, decimal vipPrice, decimal price4, decimal price5,
             decimal price6, decimal price7, decimal taxRate, string aliasName, string attribute, string phoneticCode, string memo,
             string netContent, string originPlace, decimal weight, decimal volume, int disabled, int purchasingCycle, int qualityPeriod,
             string externalId, decimal price8, string branch_code, int branch_id, string branch_name)
@@ -42,6 +42,7 @@ namespace TestKingdee.Data
                     cmd.Parameters.AddWithValue("@unit", unit);
                     cmd.Parameters.AddWithValue("@retail_price", retailPrice);
                     cmd.Parameters.AddWithValue("@wholesale_price", wholesalePrice);
+                    cmd.Parameters.AddWithValue("@p6a_CAJA", p6a_CAJA);
                     cmd.Parameters.AddWithValue("@market_price", marketPrice);
                     cmd.Parameters.AddWithValue("@vip_price", vipPrice);
                     cmd.Parameters.AddWithValue("@price4", price4);

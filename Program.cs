@@ -71,6 +71,7 @@ class Program
                 {
                     decimal retailPrice = row.MENUDEO;
                     decimal wholesalePrice = row.MAYOREO;  
+                    decimal p6a_CAJA = row.CAJA_GENERAL;
                     decimal memberprice = row.MIEMBRO;
                     decimal viPprice = row.VIP;
                     decimal boxprice = row.Box_price;
@@ -88,6 +89,7 @@ class Program
                         unit: row.unit,
                         retailPrice: retailPrice,
                         wholesalePrice: wholesalePrice,
+                        p6a_CAJA: p6a_CAJA,
                         marketPrice: 0,
                         vipPrice: memberprice,
                         price4: boxprice,

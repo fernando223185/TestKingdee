@@ -34,6 +34,7 @@ namespace TestKingdee.Data
             public decimal MENUDEO { get; set; }
             public decimal MIEMBRO { get; set; }
             public decimal MAYOREO { get; set; }
+            public decimal CAJA_GENERAL { get; set; }
             public decimal Box_price { get; set; }
             public decimal VIP { get; set; }
             public decimal PREMIUM { get; set; }
